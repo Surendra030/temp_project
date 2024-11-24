@@ -39,4 +39,4 @@ jobs:
           
       - name: Run final_script.py
          run:|
-            python links.py
+            python temp.py
