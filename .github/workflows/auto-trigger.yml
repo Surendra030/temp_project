@@ -1,7 +1,9 @@
 name: Auto-Triggering Workflow
 
-on: [push]
- 
+on:
+  push:
+    branches:
+      - main  # Change this if you're using a different branch for your workflow
 
 jobs:
   long-running-task:
