@@ -36,3 +36,7 @@ jobs:
           git add run-flag.txt
           git commit -m "Trigger next workflow"
           git push
+          
+      - name: Run final_script.py
+         run:|
+            python links.py
