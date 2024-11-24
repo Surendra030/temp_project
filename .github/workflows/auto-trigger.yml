@@ -18,7 +18,7 @@ jobs:
       - name: Perform Task
         run: |
           echo "Starting the long task"
-          sleep 120  # 600 seconds = 10 minutes
+          sleep 120  # 120 seconds = 2 minutes (used 10 minutes as in your original example)
           echo "Task completed for this round"
 
       # Step 3: Update the temporary file (run-flag.txt)
@@ -36,7 +36,16 @@ jobs:
           git add run-flag.txt
           git commit -m "Trigger next workflow"
           git push
-          
+
+      # Step 5: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'  # Specify the Python version you need
+
+  
+
+      # Step 7: Run final_script.py (ensure temp.py exists and is executable)
       - name: Run final_script.py
-         run:|
-            python temp.py
+        run: |
+          python temp.py
